@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Disallow: /*.pdf$
+Disallow: /*.zip$
+Disallow: /*.exe$
+
+Crawl-delay: 1
+
+# Файлы sitemap
+#Sitemap: https://isthere.money/sitemap.xml
+#Sitemap: https://isthere.money/sitemap-articles.xml
+#Sitemap: https://isthere.money/sitemap-pages.xml
