@@ -84,12 +84,17 @@
         плюнул я на перфекционизм, вернул и роботов и parcel packaging заодно. Не он виноватый был оказывается.
       </div>
       <h2>Parcel и robots.txt</h2>
-      <b>UPD:</b> Все-таки parcel сборка через
-      <pre><code>npm parcel build</code></pre> портит robots.txt. Parcel без танцев не включает его в сборку и вместе с
-      Cloudflare дорисовывает в /robots.txt заглавную index.html
-      Пришлось применить хитрость. Добавил это
-      <pre><code>&lt;a style=&quot;display: none&quot; href=&quot;/src/robots.txt&quot; aria-label=&quot;robots&quot;&gt;&lt;/a&gt;</code></pre>
-      Robots.txt от Cloudflare скопировал локально, а там отключил.
+      <div>
+        <b>UPD:</b>
+        Все-таки parcel сборка через
+        <pre><code>npm parcel build</code></pre> портит robots.txt. Parcel без танцев не включает его в сборку и вместе
+        с
+        Cloudflare дорисовывает в /robots.txt заглавную index.html
+        Пришлось применить хитрость. Добавил это
+        <p>
+          <code>&lt;a style=&quot;display: none&quot; href=&quot;/src/robots.txt&quot; aria-label=&quot;robots&quot;&gt;&lt;/a&gt;</code>
+        </p>
+        Robots.txt от Cloudflare скопировал локально, а там отключил.
 
       </div>
       <div>Ура, 100 из 100 в lightouse</div>
