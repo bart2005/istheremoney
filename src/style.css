@@ -9,7 +9,9 @@ nav li {
 }
 footer {
   padding-top: 15px;
+  padding-bottom: 15px;
 }
+
 .time {
   font-style: italic;
 }
