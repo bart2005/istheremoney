@@ -10,3 +10,6 @@ nav li {
 footer {
   padding-top: 15px;
 }
+.time {
+  font-style: italic;
+}
