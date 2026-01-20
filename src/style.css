@@ -15,3 +15,6 @@ footer {
 .time {
   font-style: italic;
 }
+.plan {
+  list-style-type: decimal;
+}
