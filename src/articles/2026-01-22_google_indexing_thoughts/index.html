@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ3TSGL1DW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-NQ3TSGL1DW');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О том, как часто Google индексирует мой сайт | isthere.money</title>
+  <meta name="description" content="Пытаюсь разобраться как часто и когда Google индексирует мой сайт">
+  <link rel="canonical" href="/src/articles/2026-01-22_google_indexing_thoughts/index.html" />
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+
+<body>
+  <header>
+    <a href="/">isthere.money</a>
+  </header>
+  <main>
+    <article>
+      <h1>Google добавил еще одну страницу в выдачу</h1>
+      <div><a href="/src/articles/2026-01-21_add_google_analytics/index.html">Ранее: Анализ трафика: замена Cloudflare
+          на Google</a></div>
+      <p><time datetime="2026.01.22">2026.01.22</time> </p>
+      <div>
+        Так то в целом событие не масштабное, ежу понятно. Но есть над чем подумать.
+
+      </div>
+      <h2>Как Google видит мою страницу?</h2>
+      <div class="">Во-первых: выдача выглядит так, как будто гугл индексирует мои страницы строго в определенное время.
+        Это 16:00:00
+        America/Los_Angeles, что есть 00:00 UTC. Но насколько такое возможно? Пока спорил с Grokом мне пришла идея:
+        так это же скорее все у гугла этот Javascript не исполняется, как я ожидаю. Т.е. когда его бот заходит на
+        страницу, <code>&lt;script&gt;new Date()&lt;/script&gt;</code> для него всегда выдает время ноль? Ишь ты, хитрая
+        падла. Но пока не вижу способа проверить догадку без бэкенда. Может можно Cloudflare напрячь, но... пойду, пока,
+        поковыряю Google Search Console.</div>
+    </article>
+
+  </main>
+  <footer>
+    <a href="https://t.me/istheremoney/18" target="_blank" rel="noopener noreferrer">Обсуждение в Telegram</a>
+  </footer>
+
+</body>
+
+
+</html>
