@@ -34,5 +34,7 @@ sed "s/id='upd' datetime=.*</id='upd' datetime='${DATE}'>${DATE}</g" -i "$FILE"
 update_time "id='update-todo'"
 update_time "id='update-plan'"
 update_time "id='update-state'"
+
+./sitemap.sh | tee ./src/sitemap.xml
 # git commit -a -m "datetime update to ${DATE}"
 # git push
