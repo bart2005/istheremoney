@@ -8,7 +8,7 @@ export default new Optimizer({
     const html = contents.toString()
       .replace(
         '<meta name=yandex-verification content=5bbb42b19c3700ce>',
-        '<meta name="yandex-verification" content="5bbb42b19c3700ce" />'
+        '<head><meta name="yandex-verification" content="5bbb42b19c3700ce" /></head>'
       );
     // console.log('optimizer', html);
 
