@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-FORMAT="%Y.%m.%d %H:%M:%S"
+FORMAT="%Y-%m-%d %H:%M:%S"
 DATE=`date +"$FORMAT"`
 FILE="$DIR"/src/index.html
 cd "$DIR"
