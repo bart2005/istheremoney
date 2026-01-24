@@ -3,8 +3,9 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 FORMAT="%Y-%m-%d %H:%M:%S"
 DATE=`date +"$FORMAT"`
-FILE="$DIR"/src/index.html
-cd "$DIR"
+cd "$DIR"/..
+FILE="src/index.html"
+
 function update_time() {
   FILES_MD5=".files_md5"
   RGX="$1"
