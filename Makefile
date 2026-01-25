@@ -12,6 +12,7 @@ update-time:
 	scripts/deploy.sh
 verify:
 	scripts/verify.sh $(CURDIR)/dist
+before-deploy: update-time verify sitemap-update
 template:
 	scripts/template.sh
 img:
