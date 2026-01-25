@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 TRG_DIR="$DIR/../src/articles"
 TEMPLATE="$DIR/../templates/article.html"
-
+MAIN_PAGE_PATH="$DIR/../src/index.html"
 if [ ! -f "$TEMPLATE" ]; then
     echo "Ошибка: файл $TEMPLATE не найден в текущей директории"
     exit 1
@@ -13,6 +13,7 @@ fi
 TITLE_VAR="Исправление ошибок canonical ссылок"
 DESCR_VAR="Нужен ли мне index.html в моих канонических ссылках? Google заругал. Исправляю."
 PREV_POST="src/articles/2026-01-24_how_to_validate_html/index.html"
+H1="Исправляем текущие ошибки"
 
 DATE=$(date +"%Y-%m-%d")
 PATH_VAR="${DATE}_Google_links_warnings"
@@ -56,6 +57,7 @@ if [ $? -eq 0 ]; then
     echo "  DATE:  $DATE"
     echo "  PATH:  $PATH_VAR"
     echo "  TITLE: $TITLE_VAR"
+    echo "  H1: $H1"
     echo "  DESCR: $DESCR_VAR"
     echo "  PREV_LINK: $PREV_LINK"
     echo "  PREV_TITLE: $PREV_TITLE"
@@ -63,17 +65,26 @@ else
     echo "✗ Ошибка при создании файла"
     exit 1
 fi
-echo update link in previuos article
-if grep -q 'id="next"' "$$PREV_POST_PATH"
+echo update link in previuos article: $PREV_POST_PATH
+if grep -q 'id="next"' "$PREV_POST_PATH"
 then
     echo "В файле уже есть ссылка с id=\"next\""
 else
-  sed "/<\/head>/i\\
-    <p><a id=\"next\" href=\"$POST_URL\">Далее: $TITLE_VAR</a></p>"
+  echo добавляю ссылку в предыдущий пост
+  sed -i "/<\/main>/i<p><a id=\"next\" href=\"$POST_URL\">Далее: $TITLE_VAR</a></p>" "$PREV_POST_PATH"
 fi
 
-# Проверяем, есть ли тег </head> в файле
-if ! grep -q '</head>' "$$PREV_POST_PATH"; then
-    echo "Ошибка: в файле нет тега </head>"
-    exit 1
+echo добавляем ссылку на главную
+if rg "$POST_URL" "$MAIN_PAGE_PATH"
+then
+  echo Already exists
+else
+  sed -i "/<ul id=\"articles\">/a<li><a href=\"$POST_URL\">$DATE: $TITLE_VAR</a></li>" "$MAIN_PAGE_PATH"
 fi
+
+
+# Проверяем, есть ли тег </head> в файле
+# if ! grep -q '</head>' "$$PREV_POST_PATH"; then
+#     echo "Ошибка: в файле нет тега </head>"
+#     exit 1
+# fi
