@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+set -e
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+TRG_DIR="$DIR/../src/articles"
+TEMPLATE="$DIR/../templates/article.html"
+
+if [ ! -f "$TEMPLATE" ]; then
+    echo "Ошибка: файл $TEMPLATE не найден в текущей директории"
+    exit 1
+fi
+
+TITLE_VAR="Исправление ошибок canonical ссылок"
+DESCR_VAR="Нужен ли мне index.html в моих канонических ссылках? Google заругал. Исправляю."
+PREV_POST="src/articles/2026-01-24_how_to_validate_html/index.html"
+
+DATE=$(date +"%Y-%m-%d")
+PATH_VAR="${DATE}_Google_links_warnings"
+POST_URL="/src/articles/$PATH_VAR/index.html"
+PREV_POST_PATH="$DIR/../$PREV_POST"
+PREV_LINK="/$PREV_POST"
+PREV_TITLE=$(cat "$PREV_POST_PATH"| rg title | sed -n 's/.*<title>\([^|]*\)[[:space:]]*|[[:space:]]*.*<\/title>.*/\1/p' )
+# Запрашиваем данные у пользователя
+# read -p "Введите PATH (относительный путь без index.html, например 'articles/new_post'): " PATH_VAR
+# read -p "Введите TITLE: " TITLE_VAR
+# read -p "Введите DESCR: " DESCR_VAR
+
+# Проверяем, введены ли все значения
+# if [ -z "$PATH_VAR" ] || [ -z "$TITLE_VAR" ] || [ -z "$DESCR_VAR" ]; then
+#     echo "Ошибка: все поля должны быть заполнены"
+#     exit 1
+# fi
+
+# Создаем директорию, если её нет
+FULL_PATH=$TRG_DIR/$PATH_VAR
+mkdir -p "$FULL_PATH"
+
+# Определяем путь к выходному файлу
+OUTPUT_FILE="$FULL_PATH/index.html"
+echo "$OUTPUT_FILE"
+
+# Заменяем переменные в шаблоне и сохраняем результат
+sed -e "s|{{DATE}}|$DATE|g" \
+    -e "s|{{PATH}}|$PATH_VAR|g" \
+    -e "s|{{TITLE}}|$TITLE_VAR|g" \
+    -e "s|{{DESCR}}|$DESCR_VAR|g" \
+    -e "s|{{PREV_LINK}}|$PREV_LINK|g" \
+    -e "s|{{PREV_TITLE}}|$PREV_TITLE|g" \
+    "$TEMPLATE" > "$OUTPUT_FILE"
+
+# Проверяем успешность создания файла
+if [ $? -eq 0 ]; then
+    echo "✓ Файл успешно создан: $OUTPUT_FILE"
+    echo "Содержимое:"
+    echo "POST_URL:"$POST_URL
+    echo "  DATE:  $DATE"
+    echo "  PATH:  $PATH_VAR"
+    echo "  TITLE: $TITLE_VAR"
+    echo "  DESCR: $DESCR_VAR"
+    echo "  PREV_LINK: $PREV_LINK"
+    echo "  PREV_TITLE: $PREV_TITLE"
+else
+    echo "✗ Ошибка при создании файла"
+    exit 1
+fi
+echo update link in previuos article
+if grep -q 'id="next"' "$$PREV_POST_PATH"
+then
+    echo "В файле уже есть ссылка с id=\"next\""
+else
+  sed "/<\/head>/i\\
+    <p><a id=\"next\" href=\"$POST_URL\">Далее: $TITLE_VAR</a></p>"
+fi
+
+# Проверяем, есть ли тег </head> в файле
+if ! grep -q '</head>' "$$PREV_POST_PATH"; then
+    echo "Ошибка: в файле нет тега </head>"
+    exit 1
+fi

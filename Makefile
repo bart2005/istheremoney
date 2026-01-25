@@ -12,5 +12,6 @@ update-time:
 	scripts/deploy.sh
 verify:
 	scripts/verify.sh $(CURDIR)/dist
-
+template:
+	scripts/template.sh
 	
