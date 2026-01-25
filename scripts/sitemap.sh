@@ -20,7 +20,7 @@ fd -t f '^index\.html$' . | while read -r file; do
 
   # Формируем URL всегда с /index.html
   loc="${URL}/${clean_path}"
-
+  loc=${loc/index.html/}
   cat << EOF
   <url>
     <loc>${loc}</loc>

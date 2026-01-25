@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# set -e
+set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 FORMAT="%Y-%m-%d %H:%M:%S"
 DATE=`date +"$FORMAT"`
@@ -36,6 +36,6 @@ update_time "id='update-todo'"
 update_time "id='update-plan'"
 update_time "id='update-state'"
 
-./sitemap.sh | tee ./src/sitemap.xml
+#./sitemap.sh | tee ./src/sitemap.xml
 # git commit -a -m "datetime update to ${DATE}"
 # git push
