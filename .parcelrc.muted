@@ -1,7 +1,8 @@
 {
   "extends": "@parcel/config-default",
   "optimizers": {
-    "*":["..."],
-    "index.html":["...", "./parcel-optimizer-yandex-meta.js"]
+    "*":["./custom-parcel-optimizer", "..."]
   }
 }
+
+ // "index.html":["...", "./parcel-optimizer-yandex-meta.js"]
