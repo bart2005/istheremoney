@@ -4,9 +4,11 @@ html {
   display: flex;
   height: 100%;
 }
+
 nav li {
   padding: 4px;
 }
+
 footer {
   padding-top: 15px;
   padding-bottom: 30px;
@@ -15,11 +17,24 @@ footer {
 .time {
   font-style: italic;
 }
+
 .plan {
   list-style-type: decimal;
 }
-table, th, td {
+
+table,
+th,
+td {
   border: 1px solid gray;
   border-collapse: collapse;
   padding: 4px;
+}
+
+.responsive-img {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* убирает лишние отступы снизу */
 }

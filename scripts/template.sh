@@ -10,13 +10,14 @@ if [ ! -f "$TEMPLATE" ]; then
     exit 1
 fi
 
-TITLE_VAR="Исправление ошибок canonical ссылок"
-DESCR_VAR="Нужен ли мне index.html в моих канонических ссылках? Google заругал. Исправляю."
-PREV_POST="src/articles/2026-01-24_how_to_validate_html/index.html"
-H1="Исправляем текущие ошибки"
-
 DATE=$(date +"%Y-%m-%d")
-PATH_VAR="${DATE}_Google_links_warnings"
+PATH_VAR="${DATE}_how_Google_indexing_my_sites"
+TITLE_VAR="Как Google индексирует мои сайты (продолжение)"
+DESCR_VAR="Продолжаю разбираться как часто и когда Google индексирует мои сайты"
+PREV_POST="src/articles/2026-01-25_Google_links_warnings/index.html"
+H1=".COM vs .ONLINE: кто быстрее?"
+
+
 POST_URL="/src/articles/$PATH_VAR/index.html"
 PREV_POST_PATH="$DIR/../$PREV_POST"
 PREV_LINK="/$PREV_POST"
@@ -45,6 +46,7 @@ sed -e "s|{{DATE}}|$DATE|g" \
     -e "s|{{PATH}}|$PATH_VAR|g" \
     -e "s|{{TITLE}}|$TITLE_VAR|g" \
     -e "s|{{DESCR}}|$DESCR_VAR|g" \
+    -e "s|{{H1}}|$H1|g" \
     -e "s|{{PREV_LINK}}|$PREV_LINK|g" \
     -e "s|{{PREV_TITLE}}|$PREV_TITLE|g" \
     "$TEMPLATE" > "$OUTPUT_FILE"

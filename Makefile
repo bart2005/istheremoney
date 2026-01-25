@@ -1,4 +1,4 @@
-PHONY: update-time verify build sitemap* deploy
+PHONY: update-time verify build sitemap* deploy template img
 
 sitemap:
 	scripts/sitemap.sh
@@ -14,4 +14,5 @@ verify:
 	scripts/verify.sh $(CURDIR)/dist
 template:
 	scripts/template.sh
-	
+img:
+	magick $(I) -quality 85 -strip output.webp
