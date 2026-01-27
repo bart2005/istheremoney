@@ -11,11 +11,11 @@ if [ ! -f "$TEMPLATE" ]; then
 fi
 
 DATE=$(date +"%Y-%m-%d")
-PATH_VAR="${DATE}_how_Google_indexing_my_sites"
-TITLE_VAR="Как Google индексирует мои сайты (продолжение)"
-DESCR_VAR="Продолжаю разбираться как часто и когда Google индексирует мои сайты"
-PREV_POST="src/articles/2026-01-25_Google_links_warnings/index.html"
-H1=".COM vs .ONLINE: кто быстрее?"
+PATH_VAR="${DATE}_how_Yandex_indexes_my_site"
+TITLE_VAR="Как Yandex индексирует мои сайты"
+DESCR_VAR="Отчет как часто и когда Yandex индексирует мои сайты"
+PREV_POST="src/articles/2026-01-25_how_Google_indexing_my_sites/index.html"
+H1="Почему молчит Яша?"
 
 
 POST_URL="/src/articles/$PATH_VAR/index.html"

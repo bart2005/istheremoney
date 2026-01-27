@@ -1,4 +1,4 @@
-PHONY: update-time verify build sitemap* deploy template img
+PHONY: update-time verify build sitemap* deploy template img verify-site
 
 sitemap:
 	scripts/sitemap.sh
@@ -10,10 +10,17 @@ build:
 	npm run build
 update-time:
 	scripts/deploy.sh
+
 verify:
 	scripts/verify.sh $(CURDIR)/dist
+
+verify-site:
+	scripts/verify-site.sh
+
 before-deploy: update-time verify sitemap-update
+
 template:
 	scripts/template.sh
+
 img:
 	magick $(I) -quality 85 -strip output.webp
