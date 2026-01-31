@@ -11,27 +11,17 @@ if [ ! -f "$TEMPLATE" ]; then
 fi
 
 DATE=$(date +"%Y-%m-%d")
-PATH_VAR="${DATE}_how_Yandex_indexes_my_site"
-TITLE_VAR="Как Yandex индексирует мои сайты"
-DESCR_VAR="Отчет как часто и когда Yandex индексирует мои сайты"
-PREV_POST="src/articles/2026-01-25_how_Google_indexing_my_sites/index.html"
-H1="Почему молчит Яша?"
+PATH_VAR="${DATE}_Yandex_indexed_my_site"
+TITLE_VAR="Cайт попадает в выдачу Yandex"
+DESCR_VAR="Как быстро Yandex проиндексировал мой сайт. Сравнение с Google."
+PREV_POST="src/articles/2026-01-27_how_Yandex_indexes_my_site/index.html"
+H1="Не прошло и года: Яндекс нашел мой сайт."
 
 
 POST_URL="/src/articles/$PATH_VAR/index.html"
 PREV_POST_PATH="$DIR/../$PREV_POST"
 PREV_LINK="/$PREV_POST"
 PREV_TITLE=$(cat "$PREV_POST_PATH"| rg title | sed -n 's/.*<title>\([^|]*\)[[:space:]]*|[[:space:]]*.*<\/title>.*/\1/p' )
-# Запрашиваем данные у пользователя
-# read -p "Введите PATH (относительный путь без index.html, например 'articles/new_post'): " PATH_VAR
-# read -p "Введите TITLE: " TITLE_VAR
-# read -p "Введите DESCR: " DESCR_VAR
-
-# Проверяем, введены ли все значения
-# if [ -z "$PATH_VAR" ] || [ -z "$TITLE_VAR" ] || [ -z "$DESCR_VAR" ]; then
-#     echo "Ошибка: все поля должны быть заполнены"
-#     exit 1
-# fi
 
 # Создаем директорию, если её нет
 FULL_PATH=$TRG_DIR/$PATH_VAR
