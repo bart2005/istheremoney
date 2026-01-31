@@ -11,17 +11,17 @@ if [ ! -f "$TEMPLATE" ]; then
 fi
 
 DATE=$(date +"%Y-%m-%d")
-PATH_VAR="${DATE}_Yandex_indexed_my_site"
-TITLE_VAR="Cайт попадает в выдачу Yandex"
-DESCR_VAR="Как быстро Yandex проиндексировал мой сайт. Сравнение с Google."
-PREV_POST="src/articles/2026-01-27_how_Yandex_indexes_my_site/index.html"
-H1="Не прошло и года: Яндекс нашел мой сайт."
+PATH_VAR="${DATE}_Google_search_results_update"
+TITLE_VAR="Статистика индексации страниц сайта"
+DESCR_VAR="Какие страницы Google добавил в свою выдачу и почему?"
+PREV_POST="src/articles/2026-01-31_Yandex_indexed_my_site/index.html"
+H1="Обновленная статистика выдачи Google"
 
 
 POST_URL="/src/articles/$PATH_VAR/index.html"
 PREV_POST_PATH="$DIR/../$PREV_POST"
 PREV_LINK="/$PREV_POST"
-PREV_TITLE=$(cat "$PREV_POST_PATH"| rg title | sed -n 's/.*<title>\([^|]*\)[[:space:]]*|[[:space:]]*.*<\/title>.*/\1/p' )
+PREV_TITLE=$(cat "$PREV_POST_PATH"| rg title | sed -n 's/.*<title>\([^|]*\)[[:space:]]*[|-][[:space:]]*.*<\/title>.*/\1/p' )
 
 # Создаем директорию, если её нет
 FULL_PATH=$TRG_DIR/$PATH_VAR
