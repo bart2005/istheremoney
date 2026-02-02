@@ -12,8 +12,9 @@
   <script type="text/javascript" src="/src/assets/js/ya.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google жалуется на несуществующие страницы | isthere.money</title>
-  <meta name="description" content="Google обнаружил несуществующие страницы в раннее версии robots.txt, попытался их проиндексировать, не нашел и считает это ошибкой">
+  <title>Google жалуется на несуществующие страницы - isthere.money</title>
+  <meta name="description"
+    content="Google обнаружил несуществующие страницы в раннее версии robots.txt, попытался их проиндексировать, не нашел и считает это ошибкой">
   <link rel="canonical" href="https://isthere.money/articles/2026-02-02_Google_complains_about_pages/" />
   <link rel="stylesheet" href="/src/style.css">
 </head>
@@ -26,10 +27,12 @@
   <main>
     <article>
       <h1>Как бороться с плохо проиндексированными ссылками</h1>
-      <div><a href="/src/articles/2026-01-31_Yandex_indexed_my_site/index.html">Ранее: Cайт попадает в выдачу Yandex </a></div>
+      <div><a href="/src/articles/2026-01-31_Google_search_results_update/index.html">Ранее: Статистика индексации
+          страниц сайта </a></div>
       <p><time datetime="2026-02-02">2026-02-02</time> </p>
       <div class="">
-        Я не долго думал и нажаловался ИИ. Тот сначала нагнал туману, потом говорит редиректни. У меня Cloudflare pages, как?
+        Я не долго думал и нажаловался ИИ. Тот сначала нагнал туману, потом говорит редиректни. У меня Cloudflare pages,
+        как?
       </div>
       <h2>Cloudflare Pages: редирект 301 для отсутствующих страниц</h2>
       <div class="">
@@ -39,13 +42,19 @@
       <div class=""><code>/unexisting/url /existing/url 301</code></div>
       <div class="">Ждешь профит.</div>
       <div class="">Пошел я ждать.</div>
-      <div class="">А, у меня же parcel, не все так быстро. Добавляем в index.html для включения в сборку <code><pre>&lt;a style="display: none" href="/src/_redirects" aria-label="robots"&gt;&lt;/a&gt;</pre></code></div>
+      <div class="">А, у меня же parcel, не все так быстро. Добавляем в index.html для включения в сборку
+        <code><pre>&lt;a style="display: none" href="/src/_redirects" aria-label="robots"&gt;&lt;/a&gt;</pre></code>
+      </div>
       <div class="">Пока просто так пишу (предчувствую, успех), сейчас задеплою.</div>
+      <h2>Как добавить _redirects в сборку parcel</h2>
+      <div class="">Ну понятно, сразу не получилось. Ок, добавляю такое в <code>package.json</code>
+        <div class=""><code>"build": "parcel build && cp src/_redirects dist/"</code></div> и пробуем заново.</div>
+
     </article>
 
   </main>
   <footer>
-    <a href="https://t.me/istheremoney/29" target="_blank" rel="noopener noreferrer">Обсуждение в Telegram</a>
+    <a href="https://t.me/istheremoney/35" target="_blank" rel="noopener noreferrer">Обсуждение в Telegram</a>
   </footer>
 
   <noscript>
