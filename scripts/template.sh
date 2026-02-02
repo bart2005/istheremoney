@@ -11,11 +11,11 @@ if [ ! -f "$TEMPLATE" ]; then
 fi
 
 DATE=$(date +"%Y-%m-%d")
-PATH_VAR="${DATE}_Google_search_results_update"
-TITLE_VAR="Статистика индексации страниц сайта"
-DESCR_VAR="Какие страницы Google добавил в свою выдачу и почему?"
+PATH_VAR="${DATE}_Google_complains_about_pages"
+TITLE_VAR="Как исправить плохо проиндексированные ссылки"
+DESCR_VAR="Google обнаружил несуществующие страницы в раннее версии robots.txt, попытался их проиндексировать, не нашел и считает это ошибкой"
 PREV_POST="src/articles/2026-01-31_Yandex_indexed_my_site/index.html"
-H1="Обновленная статистика выдачи Google"
+H1="Google требует определить четкие ссылки"
 
 
 POST_URL="/src/articles/$PATH_VAR/index.html"

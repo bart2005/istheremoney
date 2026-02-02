@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+
+Disallow: /sitemap-articles.xml
+Disallow: /sitemap-pages.xml
