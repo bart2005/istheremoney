@@ -11,11 +11,11 @@ if [ ! -f "$TEMPLATE" ]; then
 fi
 
 DATE=$(date +"%Y-%m-%d")
-PATH_VAR="${DATE}_referral_links_tracking"
-TITLE_VAR="Как отслеживать конверсии для реферальных ссылок"
-DESCR_VAR="Партнерка показывает переходы, но следует разобраться, кто откуда приходит"
-PREV_POST="src/articles/2026-02-02_Google_complains_about_pages/index.html"
-H1="Как настроить отслеживание переходов"
+PATH_VAR="${DATE}_indexing_report_update"
+TITLE_VAR="Состояние индексации сайта"
+DESCR_VAR="Что и как проиндексировали Google и Yandex на сегодняшний день"
+PREV_POST="src/articles/2026-02-04_referral_links_tracking/index.html"
+H1="Google и Yandex: как сейчас выглядит мой сайт в их глазах"
 
 
 POST_URL="/src/articles/$PATH_VAR/index.html"
