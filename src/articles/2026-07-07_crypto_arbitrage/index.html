@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ3TSGL1DW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-NQ3TSGL1DW');
+  </script>
+  <script type="text/javascript" src="/src/assets/js/ya.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Арбитраж крипты - isthere.money</title>
+  <meta name="description" content="Как осуществлять арбитражные сделки с минимальными рисками максимально просто">
+  <link rel="canonical" href="https://isthere.money/articles/2026-07-07_crypto_arbitrage/" />
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+
+<body>
+  <header>
+    <a href="/">isthere.money</a>
+  </header>
+  <main>
+    <article>
+      <h1>Арбитражные сделки в пределах одной биржи</h1>
+      <div><a href="/src/articles/2026-07-07_updated_site_stats/index.html">Ранее: Что с сайтом после 5 месяцев простоя
+        </a></div>
+      <p><time datetime="2026-07-07">2026-07-07</time> </p>
+      <h2>Дисклеймер и что делать перед чтением</h2>
+      <ul>
+        <li>
+          все на твой страх и риск, я сам так делаю
+        </li>
+        <li>
+          регайся на <a href="https://promote.mexc.com/r/KHQBKNUrG8">MEXC</a>, а почему именно там - читай ниже (но сначала нет времени объяснять, регайся)
+        </li>
+      </ul>
+      <h2>Арбитраж на пальцах</h2>
+      <div class="">
+        На научное объяснение не претендую, да и расскажу здесь только про арбитраж спота и фьючей.
+        <div>Смысл в следующем:</div>
+        <ul>
+          <li>
+            ищешь пару активов где доступен спот и фьюч и имеется периодическое расхождение в цене.
+          </li>
+          <li>
+            ждешь когда цена спота станет ниже цены фьюча (обычно 0.4% это уже норм) и открываешь лонг позу на споте,
+            шорт на фьюче (одинаковый объем)
+          </li>
+          <li>ждешь схождения цены (цена спота становится равной, а лучше выше чем фьюча) и закрываешь спот и фьюч</li>
+        </ul>
+
+        <h2>Арбитраж на бирже MEXC на примере</h2>
+        В реальности это выглядит так:
+
+        <div>Биржа <a href="https://promote.mexc.com/r/KHQBKNUrG8">MEXC</a>: spot: XMRUSDT: 300$, perpetual: XMRUSDT.P: 301$ (так в принципе бывает, можешь посмотреть)
+        </div>
+        <div>покупаешь 1 XMR на споте (300 баксов) и продаешь сразу 1 XMR контракт на фьючах. Тут задействовано уже не
+          300 баксов, а
+          30.1, т.к. ты берешь плечо 10х. Итого в сделке 330.1</div>
+        <div class="">Цена пришла допустим к:
+          <div class="">spot: 290$, perp: 290$ (т.е. в целом упала и сравнялась)</div>
+        </div>
+        <div class="">Ловко выходим из сделки:
+          <br />продаем спот за 290$ (т.е. 1 XMR за 290$ понятно дело получили 290$)
+          <br />закрываем perpetual позицию.
+          Она закрывается так: 1 контракт по 301 было, 290 стало, т.е. прибыль составила (301-290) * 1 = 11$
+        </div>
+        <div class="">Итого: на споте стало на 10$ меньше, т.е. 290$, на фьючах же добавилось 11$. Прибыток: 1$</div>
+      </div>
+      <h2>Как найти актив для арбитража</h2>
+      <div>
+        <div><b>Руками:</b></div> составь себе список на <a href="https://www.tradingview.com/pricing/?share_your_love=m2811163">Tradingview</a> в виде MEXC:XMRUSDT/MEXC:XMRUSDT.P и пройди по нему.
+        
+        <div><b>Автоматом:</b></div> наверное есть сервисы. Но не факт что точные. Я пользовался последний раз таким, он
+        отдавал пары с задержками.
+        <div>У меня есть своя прога.</div>
+        <br />
+        Выглядит так:
+        <div><img src="pairs-for-arbitrage.webp" alt="пары для арбитража на крипте"></div>
+        <div class="">Binance и <a href="https://promote.mexc.com/r/KHQBKNUrG8">MEXC</a> тут не важно, т.к. <a href="https://promote.mexc.com/r/KHQBKNUrG8">MEXC</a> фьючи сильно повторяют цену Binance и это в основном для
+          мониторинга.</div>
+
+      </div>
+      <h2>Почему тут <a href="https://promote.mexc.com/r/KHQBKNUrG8">MEXC</a> да и в целом так советую?</h2>
+      <div class="">Комиссии.</div>
+      <div class="">Комиссии, на которые новичок плюет, никакой блоггер не рассказывает да и в целом про них не
+        вспоминают. </div>
+      <div class="">Но они есть.</div>
+      <div class="">И выглядит это так.</div>
+      <div class="">Комиссия makerа (когда ордера исполняются через лимитные заявки) допустим 0.018% (бинанс сейчас со
+        скидкой). Фигня, скажешь ты,
+        вот еще, копейки, даже и меньше. Я же планирую взять 1% движения, где там 0.018%, дарю.</div>
+      <div class="">Теперь считаем:</div>
+      <div class="">Открываешься с 30$ на 300$, платишь 0.054</div>
+      <div class="">Закрываешься с 290$, платишь 0.0522</div>
+      <div class="">Уже 0.1$</div>
+      <div class="">И это только фьючи посчитали. На споте допустим бинанс не так щедр. Fee на таком уровне 0.1%. Итого:
+        Открытие 300$(0.3$)+Закрытие 290$(0.29)=0.59$</div>
+      <div class="">Итог такой манипуляции понятен? Ты думал, что заработал 1$. Реальность это 1-0.59-0.1, т.е. 0.31$
+        твой профит</div>
+      <h3><a href="https://promote.mexc.com/r/KHQBKNUrG8">MEXC</a> очень часто предлагает 0% комиссии, пока это так - это лучшая биржа для такого мелкого арбитража и вообще для торговли</h3>
+      
+      <h2>Итоги</h2>
+      <div class="">Регайся на <a href="https://promote.mexc.com/r/KHQBKNUrG8">MEXC</a> :)</div>
+    </article>
+
+  </main>
+  <footer>
+    <a href="https://t.me/istheremoney/29" target="_blank" rel="noopener noreferrer">Обсуждение в Telegram</a>
+  </footer>
+
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/106420495" style="position:absolute; left:-9999px;" alt=""></div>
+  </noscript>
+</body>
+
+
+</html>

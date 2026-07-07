@@ -11,11 +11,11 @@ if [ ! -f "$TEMPLATE" ]; then
 fi
 
 DATE=$(date +"%Y-%m-%d")
-PATH_VAR="${DATE}_tracking_direct_page"
-TITLE_VAR="Как отслеживать позиции сайта по конкретному запросу"
-DESCR_VAR="Каким образом я собираюсь отслеживать позиции определенной страницы по конкретному запросу в Google"
-PREV_POST="src/articles/2026-02-09_indexing_report_update/index.html"
-H1="Как отслеживать позицию в выдаче по конкретному запросу"
+PATH_VAR="${DATE}_crypto_arbitrage"
+TITLE_VAR="Арбитраж крипты"
+DESCR_VAR="Как осуществлять арбитражные сделки с минимальными рисками максимально просто"
+PREV_POST="src/articles/2026-07-07_updated_site_stats/index.html"
+H1="Что такое арбитраж? Коротко по делу"
 
 
 POST_URL="/src/articles/$PATH_VAR/index.html"
