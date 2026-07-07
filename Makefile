@@ -24,3 +24,6 @@ template:
 
 img:
 	magick $(I) -quality 85 -strip output.webp
+
+clean:
+	rm -r .parcel-cache
