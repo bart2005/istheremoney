@@ -11,11 +11,11 @@ if [ ! -f "$TEMPLATE" ]; then
 fi
 
 DATE=$(date +"%Y-%m-%d")
-PATH_VAR="${DATE}_indexing_report_update"
-TITLE_VAR="Состояние индексации сайта"
-DESCR_VAR="Что и как проиндексировали Google и Yandex на сегодняшний день"
-PREV_POST="src/articles/2026-02-04_referral_links_tracking/index.html"
-H1="Google и Yandex: как сейчас выглядит мой сайт в их глазах"
+PATH_VAR="${DATE}_tracking_direct_page"
+TITLE_VAR="Как отслеживать позиции сайта по конкретному запросу"
+DESCR_VAR="Каким образом я собираюсь отслеживать позиции определенной страницы по конкретному запросу в Google"
+PREV_POST="src/articles/2026-02-09_indexing_report_update/index.html"
+H1="Как отслеживать позицию в выдаче по конкретному запросу"
 
 
 POST_URL="/src/articles/$PATH_VAR/index.html"
