@@ -11,11 +11,11 @@ if [ ! -f "$TEMPLATE" ]; then
 fi
 
 DATE=$(date +"%Y-%m-%d")
-PATH_VAR="${DATE}_crypto_arbitrage"
-TITLE_VAR="Арбитраж крипты"
-DESCR_VAR="Как осуществлять арбитражные сделки с минимальными рисками максимально просто"
-PREV_POST="src/articles/2026-07-07_updated_site_stats/index.html"
-H1="Что такое арбитраж? Коротко по делу"
+PATH_VAR="${DATE}_crypto_arbitrage_open_close_deal"
+TITLE_VAR="Арбитраж крипты: как открывать и закрывать сделку"
+DESCR_VAR="Как входить в сделку чтобы не было мучительно больно"
+PREV_POST="src/articles/2026-07-07_crypto_arbitrage/index.html"
+H1="Арбитраж: вход в сделку"
 
 
 POST_URL="/src/articles/$PATH_VAR/index.html"
